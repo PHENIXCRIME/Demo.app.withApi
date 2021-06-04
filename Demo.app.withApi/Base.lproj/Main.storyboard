@@ -1,24 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IgX-Uj-e80">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Demo Bitcoin-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BitCoinViewController" customModule="Demo_app_withApi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btc" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-D4-emu">
+                                <rect key="frame" x="117" y="358" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="i6B-go-rpx"/>
+                                    <constraint firstAttribute="width" secondItem="39Y-D4-emu" secondAttribute="height" multiplier="1:1" id="iAZ-Uo-VC8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-VC-KBg">
+                                <rect key="frame" x="40" y="296" width="334" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="CW7-Eg-BvB">
+                                <rect key="frame" x="80" y="552" width="254" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gHJ-8Z-gcZ">
+                                <rect key="frame" x="80" y="560" width="254" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CW7-Eg-BvB" secondAttribute="trailing" constant="80" id="0zv-Gj-fjY"/>
+                            <constraint firstItem="CW7-Eg-BvB" firstAttribute="top" secondItem="39Y-D4-emu" secondAttribute="bottom" constant="14" id="6kM-OR-XQb"/>
+                            <constraint firstItem="gHJ-8Z-gcZ" firstAttribute="top" secondItem="CW7-Eg-BvB" secondAttribute="bottom" constant="8" symbolic="YES" id="Db5-pP-ebc"/>
+                            <constraint firstItem="39Y-D4-emu" firstAttribute="top" secondItem="fyE-VC-KBg" secondAttribute="bottom" constant="20" id="FCF-dX-5mA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fyE-VC-KBg" secondAttribute="trailing" constant="40" id="Ohh-1E-gYP"/>
+                            <constraint firstItem="39Y-D4-emu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XTx-jo-oyw"/>
+                            <constraint firstItem="fyE-VC-KBg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="fac-5t-7dt"/>
+                            <constraint firstItem="CW7-Eg-BvB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="iwD-E7-oCJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gHJ-8Z-gcZ" secondAttribute="trailing" constant="80" id="k1H-w4-wnG"/>
+                            <constraint firstItem="gHJ-8Z-gcZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="mbE-La-Kge"/>
+                            <constraint firstItem="39Y-D4-emu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tvY-oX-GS6"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Demo Bitcoin" id="Gzf-kK-9mi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="J9l-av-bDe">
+                            <connections>
+                                <action selector="refreshTapped:" destination="BYZ-38-t0r" id="AkY-s3-0Wf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="eurLable" destination="gHJ-8Z-gcZ" id="3Ua-rH-lbo"/>
+                        <outlet property="jpyLable" destination="CW7-Eg-BvB" id="Sop-zR-MFG"/>
+                        <outlet property="usdLable" destination="fyE-VC-KBg" id="PCI-Nk-lsU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="112.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lr0-dy-rjy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IgX-Uj-e80" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qen-HE-qt8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="axj-92-EuH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TjO-4O-6rd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btc" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
